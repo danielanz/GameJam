@@ -1,0 +1,3 @@
+# GameJam
+2D platformer, GAMEJAM
+VIDEOJUEGO INTERACTIVO 2D
