@@ -325,6 +325,7 @@ GameObject:
   - component: {fileID: 1427259013}
   - component: {fileID: 1427259011}
   - component: {fileID: 1427259010}
+  - component: {fileID: 1427259015}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -371,7 +372,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1220082b297a5774b8f15d4a5899aa35, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -391,7 +392,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1427259007}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.6, y: -0.6, z: 0}
+  m_LocalPosition: {x: -3.69, y: -0.84, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children:
   - {fileID: 1421815624}
@@ -412,7 +413,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1427259012}
-  runSpeed: 40
+  animator: {fileID: 1427259015}
+  runSpeed: 20
 --- !u!58 &1427259011
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -453,7 +455,19 @@ MonoBehaviour:
   m_CrouchDisableCollider: {fileID: 0}
   OnLandEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1427259010}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnLanding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -504,6 +518,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!95 &1427259015
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427259007}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d9c17f948dc0d1847900dd31686cf8fb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2011696131
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,9 +609,9 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1453105015
+  m_SortingLayer: -1
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -1166,7 +1199,7 @@ CompositeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.06}
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
@@ -1211,24 +1244,24 @@ CompositeCollider2D:
         Y: -6328125
   m_CompositePaths:
     m_Paths:
-    - - {x: 4.999971, y: -2}
-      - {x: 5.0000296, y: -1.5}
-      - {x: 5.5, y: -1.4999707}
-      - {x: 5.499971, y: -1}
-      - {x: 1.671875, y: -0.9999706}
-      - {x: 1.6718662, y: -0.98436713}
-      - {x: 1.5312442, y: -0.8593736}
-      - {x: 1.5, y: -0.8515407}
-      - {x: 1.4999827, y: -0.6328058}
-      - {x: 1.1640576, y: -0.5}
-      - {x: -0.6875076, y: -0.5000081}
-      - {x: -1, y: -0.8281355}
-      - {x: -1.0000212, y: -0.8515679}
-      - {x: -1.0312549, y: -0.85937923}
-      - {x: -1.171875, y: -0.9843867}
-      - {x: -1.1719044, y: -1}
-      - {x: -4.5, y: -1.0000293}
-      - {x: -4.499971, y: -2}
+    - - {x: 4.999971, y: -2.06}
+      - {x: 5.0000296, y: -1.56}
+      - {x: 5.5, y: -1.5599706}
+      - {x: 5.499971, y: -1.06}
+      - {x: 1.671875, y: -1.0599706}
+      - {x: 1.6718662, y: -1.0443671}
+      - {x: 1.5312442, y: -0.91937363}
+      - {x: 1.5, y: -0.9115407}
+      - {x: 1.4999827, y: -0.6928058}
+      - {x: 1.1640576, y: -0.56}
+      - {x: -0.6875076, y: -0.5600081}
+      - {x: -1, y: -0.8881355}
+      - {x: -1.0000212, y: -0.9115679}
+      - {x: -1.0312549, y: -0.91937923}
+      - {x: -1.171875, y: -1.0443866}
+      - {x: -1.1719044, y: -1.06}
+      - {x: -4.5, y: -1.0600293}
+      - {x: -4.499971, y: -2.06}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &2011696137
