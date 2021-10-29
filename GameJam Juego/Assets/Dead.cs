@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Dead : MonoBehaviour
 {
+    public int health;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -12,6 +14,14 @@ public class Dead : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        if(health <= 0)
+        {
+            Death();
+        }
+    }
+
+    private void Death()
     {
         
     }
