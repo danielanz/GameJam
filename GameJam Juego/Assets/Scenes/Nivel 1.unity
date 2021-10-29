@@ -250,7 +250,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   centerOffsetCompatibility: NaN
   orientation: 1
-  enableRotation: 1
+  enableRotation: 0
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
   rotationSpeed: 360
@@ -345,6 +345,7 @@ GameObject:
   - component: {fileID: 230639825}
   - component: {fileID: 230639824}
   - component: {fileID: 230639823}
+  - component: {fileID: 230639826}
   m_Layer: 0
   m_Name: murcielago
   m_TagString: Untagged
@@ -436,6 +437,19 @@ Transform:
   m_Father: {fileID: 216300252}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &230639826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230639822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8ffbed78bd840479a75c6f6aee0b7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aiPath: {fileID: 216300250}
 --- !u!1 &237950318
 GameObject:
   m_ObjectHideFlags: 3
